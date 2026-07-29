@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloom Studio | Cart & Checkout</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/cart.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html">Bloom Studio</a>
+        <nav class="nav-links">
+          <a href="index.html#collections">Collections</a>
+          <a href="index.html#about">Our Story</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="topbar-actions">
+          <a class="topbar-cta" href="index.html#collections">Continue Shopping</a>
+          <a class="topbar-cta" href="cart.html">Cart</a>
+        </div>
+      </header>
+
+      <section class="checkout-shell">
+        <div class="cart-panel">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow">Your order</p>
+              <h2>Cart summary</h2>
+            </div>
+          </div>
+
+          <article class="cart-item">
+            <div class="cart-item-visual">🌹</div>
+            <div class="cart-item-info">
+              <h3>Rose Romance</h3>
+              <p>Blush roses and eucalyptus wrap.</p>
+              <span>Quantity: 1</span>
+            </div>
+            <div class="cart-item-price">$84</div>
+          </article>
+
+          <article class="cart-item">
+            <div class="cart-item-visual">🌿</div>
+            <div class="cart-item-info">
+              <h3>Serene Grove</h3>
+              <p>Fresh greens with white lilies.</p>
+              <span>Quantity: 1</span>
+            </div>
+            <div class="cart-item-price">$92</div>
+          </article>
+
+          <div class="summary-box">
+            <div><span>Subtotal</span><strong>$176</strong></div>
+            <div><span>Delivery</span><strong>$12</strong></div>
+            <div><span>Gift wrap</span><strong>$8</strong></div>
+            <div class="total-row"><span>Total</span><strong>$196</strong></div>
+          </div>
+        </div>
+
+        <div class="checkout-panel">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow">Secure checkout</p>
+              <h2>Delivery details</h2>
+            </div>
+          </div>
+
+          <form class="checkout-form">
+            <label>
+              Full name
+              <input type="text" placeholder="Aisha Green" />
+            </label>
+            <label>
+              Email address
+              <input type="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              Delivery address
+              <input type="text" placeholder="42 Garden Street" />
+            </label>
+            <label>
+              Delivery note
+              <textarea rows="4" placeholder="Leave at the front desk or add a handwritten note."></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Complete order</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
