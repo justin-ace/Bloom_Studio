@@ -1,0 +1,76 @@
+:root {
+  --accent: #4d8458;
+  --accent-dark: #1f4b32;
+  --accent-soft: #eaf6eb;
+  --ink: #133120;
+  --muted: #55725b;
+  --border: #cfe3d0;
+  --white: #f7fdf8;
+  --shadow: 0 18px 48px rgba(20, 53, 34, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(135deg, #f5fdf5 0%, #dcefdc 100%);
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top left, rgba(95, 156, 109, 0.2), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(96, 135, 98, 0.16), transparent 24%);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+.brand {
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.nav-link,
+.text-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.nav-link.active {
+  color: var(--accent-dark);
+  background: linear-gradient(135deg, rgba(77, 132, 88, 0.16), rgba(77, 132, 88, 0.08));
+  border-radius: 999px;
+  padding: 6px 10px;
+  box-shadow: inset 0 0 0 1px rgba(77, 132, 88, 0.16);
+}
