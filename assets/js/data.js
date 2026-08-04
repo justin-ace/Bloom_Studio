@@ -1,81 +1,93 @@
+/**
+ * ProductCatalog
+ * --------------
+ * Owns the bouquet catalog and category logic. No DOM access here —
+ * rendering is delegated to the controllers.
+ */
 (function (window) {
   class ProductCatalog {
     constructor() {
       this.categories = ["all", "romantic", "modern", "garden"];
       this.products = [
         {
+          id: "rose-romance",
           name: "Rose Romance",
           category: "romantic",
-          price: "₱84",
+          price: 500,
           description: "Blush roses with soft eucalyptus for intimate gatherings.",
-          emoji: "🌹",
           image: "assets/images/rose.JPG",
-          accent: "linear-gradient(135deg, #f3b8c6, #f7d8e0)",
+          icon: { petals: 8, shape: "round" },
+          tone: "gold",
           tags: ["Blush tones", "Velvet wrap"],
           featuredTitle: "A candlelit bouquet with airy romance.",
           featuredDescription: "Tender petals and soft greens bring a graceful glow to your table.",
           featuredTags: ["Limited release", "Eco wrap"],
         },
         {
+          id: "linen-meadow",
           name: "Linen Meadow",
           category: "modern",
-          price: "₱76",
-          description: "A sculptural mix of tulips, ranunculus, and sculptural greens.",
-          emoji: "🌷",
+          price: 650,
+          description: "A sculptural mix of tulips, ranunculus, and structural greens.",
           image: "assets/images/tulips.JPG",
-          accent: "linear-gradient(135deg, #ecd48a, #f7f0bf)",
+          icon: { petals: 3, shape: "pointed" },
+          tone: "pine",
           tags: ["Editorial look", "Neutral palette"],
           featuredTitle: "Quiet luxury in a bouquet.",
           featuredDescription: "Soft cream tones meet clean lines for a modern statement.",
           featuredTags: ["Design led", "Premium pick"],
         },
         {
+          id: "serene-grove",
           name: "Serene Grove",
           category: "garden",
-          price: "₱92",
+          price: 700,
           description: "Fresh greens, white lilies, and meadow herbs for a calming feel.",
-          emoji: "🌿",
           image: "assets/images/lilies.JPG",
-          accent: "linear-gradient(135deg, #8bcf9f, #bfe7c4)",
+          icon: { petals: 6, shape: "slim" },
+          tone: "moss",
           tags: ["Fresh greens", "Indoor calm"],
           featuredTitle: "A lush indoor escape.",
           featuredDescription: "Layered greens and luminous whites turn any room into a serene retreat.",
           featuredTags: ["Botanical", "Gift-ready"],
         },
         {
+          id: "velvet-orchid",
           name: "Velvet Orchid",
           category: "modern",
-          price: "₱98",
-          description: "Statement orchids with deep plum tones and a polished silhouette.",
-          emoji: "🪻",
+          price: 650,
+          description: "Statement orchids with a deep, polished silhouette.",
           image: "assets/images/orchids.JPG",
-          accent: "linear-gradient(135deg, #8c4f9b, #c79ad8)",
+          icon: { petals: 5, shape: "pointed" },
+          tone: "forest",
           tags: ["Bold mood", "Contemporary"],
           featuredTitle: "Bold florals that feel architectural.",
-          featuredDescription: "Rich color and elegant structure bring a striking finish to your space.",
+          featuredDescription: "Rich structure and elegant lines bring a striking finish to your space.",
           featuredTags: ["Statement", "Luxury finish"],
         },
         {
+          id: "sunlit-petals",
           name: "Sunlit Petals",
           category: "romantic",
-          price: "₱88",
+          price: 500,
           description: "Golden daisies and peach blooms for a warm, joyful arrangement.",
-          emoji: "🌼",
           image: "assets/images/daisies.JPG",
-          accent: "linear-gradient(135deg, #f6d06f, #fff1b0)",
+          icon: { petals: 10, shape: "round" },
+          tone: "gold",
           tags: ["Sunny glow", "Soft texture"],
           featuredTitle: "Bright, cheerful, and full of energy.",
           featuredDescription: "A joyful mix of sunlit petals designed to welcome the room.",
           featuredTags: ["Seasonal", "Easy gifting"],
         },
         {
+          id: "mint-whisper",
           name: "Mint Whisper",
           category: "garden",
-          price: "₱80",
+          price: 700,
           description: "Minty greenery and white blooms for a fresh, spa-like look.",
-          emoji: "🌱",
           image: "assets/images/white%20bloom.JPG",
-          accent: "linear-gradient(135deg, #7cc48e, #d7f3dd)",
+          icon: { petals: 4, shape: "slim" },
+          tone: "pine",
           tags: ["Spa feel", "Airy stems"],
           featuredTitle: "A gentle green-inspired classic.",
           featuredDescription: "Cool tones and delicate shapes make this one feel effortlessly calm.",
@@ -85,10 +97,12 @@
     }
 
     getFilteredProducts(category = "all") {
-      if (category === "all") {
-        return this.products;
-      }
+      if (category === "all") return this.products;
       return this.products.filter((product) => product.category === category);
+    }
+
+    getById(id) {
+      return this.products.find((product) => product.id === id) || null;
     }
 
     getCategoryBadge(category) {
@@ -106,6 +120,10 @@
 
     formatLabel(category) {
       return category === "all" ? "All flowers" : category.charAt(0).toUpperCase() + category.slice(1);
+    }
+
+    formatPrice(amount) {
+      return `\u20b1${amount.toLocaleString("en-PH")}`;
     }
   }
 

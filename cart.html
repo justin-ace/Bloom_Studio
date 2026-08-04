@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/cart.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
-  <body>
+  <body data-page="cart">
     <div class="page-bg"></div>
     <div class="site-shell">
       <header class="topbar">
@@ -34,31 +34,22 @@
             </div>
           </div>
 
-          <article class="cart-item">
-            <div class="cart-item-visual">🌹</div>
-            <div class="cart-item-info">
-              <h3>Rose Romance</h3>
-              <p>Blush roses and eucalyptus wrap.</p>
-              <span>Quantity: 1</span>
-            </div>
-            <div class="cart-item-price">₱84</div>
-          </article>
+          <div id="cartList"></div>
 
-          <article class="cart-item">
-            <div class="cart-item-visual">🌿</div>
-            <div class="cart-item-info">
-              <h3>Serene Grove</h3>
-              <p>Fresh greens with white lilies.</p>
-              <span>Quantity: 1</span>
-            </div>
-            <div class="cart-item-price">₱92</div>
-          </article>
+          <div class="cart-empty" id="cartEmpty" hidden>
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 54c-14-6-18-22-10-34 12 0 22 8 22 20-4 6-8 10-12 14Z" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <h3>Your cart is empty</h3>
+            <p>Browse the collection and add a bouquet you love.</p>
+            <a class="btn btn-primary" href="index.html#collections">Explore collection</a>
+          </div>
 
-          <div class="summary-box">
-            <div><span>Subtotal</span><strong>₱176</strong></div>
-            <div><span>Delivery</span><strong>₱12</strong></div>
-            <div><span>Gift wrap</span><strong>₱8</strong></div>
-            <div class="total-row"><span>Total</span><strong>₱196</strong></div>
+          <div class="summary-box" id="orderSummary">
+            <div><span>Subtotal</span><strong data-row="subtotal">₱0</strong></div>
+            <div><span>Delivery</span><strong data-row="delivery">₱0</strong></div>
+            <div><span>Gift wrap</span><strong data-row="giftwrap">₱0</strong></div>
+            <div class="total-row"><span>Total</span><strong data-row="total">₱0</strong></div>
           </div>
         </div>
 
@@ -73,24 +64,30 @@
           <form class="checkout-form">
             <label>
               Full name
-              <input type="text" placeholder="Aisha Green" />
+              <input type="text" placeholder="Aisha Green" required />
             </label>
             <label>
               Email address
-              <input type="email" placeholder="you@example.com" />
+              <input type="email" placeholder="you@example.com" required />
             </label>
             <label>
               Delivery address
-              <input type="text" placeholder="42 Garden Street" />
+              <input type="text" placeholder="42 Garden Street" required />
             </label>
             <label>
               Delivery note
               <textarea rows="4" placeholder="Leave at the front desk or add a handwritten note."></textarea>
             </label>
-            <button class="btn btn-primary" type="submit">Complete order</button>
+            <button class="btn btn-primary" type="submit" disabled>Complete order</button>
           </form>
         </div>
       </section>
     </div>
+
+    <script src="assets/js/icons.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/cart-manager.js"></script>
+    <script src="assets/js/controllers.js"></script>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>

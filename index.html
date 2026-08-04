@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bloom Studio</title>
+    <meta name="description" content="Hand-tied bouquets for romance, modern calm, and garden freshness." />
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
     <link rel="stylesheet" href="assets/css/cart.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
-  <body>
+  <body data-page="shop">
     <div class="page-bg"></div>
     <div class="site-shell">
       <header class="topbar">
@@ -21,11 +22,44 @@
             <a class="nav-link" href="#collections" data-section="collections">Collections</a>
             <a class="nav-link" href="#contact" data-section="contact">Contact</a>
           </nav>
-          <a class="topbar-cta" href="cart.html">Cart</a>
+          <a class="topbar-cta" id="cartBadge" href="cart.html">Cart</a>
         </div>
       </header>
 
-      <section class="showcase" id="ourstory">
+      <section class="hero" id="ourstory">
+        <div class="hero-copy">
+          <p class="eyebrow">Fresh-picked, design-led florals</p>
+          <h1>Modern bouquets for luminous spaces.</h1>
+          <p>
+            Discover a refined edit of blooms that feels calm, contemporary, and effortlessly elegant.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#collections">Explore collection</a>
+            <a class="btn btn-secondary" href="#contact">Meet the studio</a>
+          </div>
+          <div class="metrics">
+            <div>
+              <strong>48h</strong>
+              <span>same-day prep</span>
+            </div>
+            <div>
+              <strong>12+</strong>
+              <span>signature styles</span>
+            </div>
+            <div>
+              <strong>4.9/5</strong>
+              <span>happy clients</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-bloom" id="heroBloom"></div>
+          <div class="hero-sprig" id="heroSprig"></div>
+        </div>
+      </section>
+
+      <section class="showcase" id="showcase">
         <div class="showcase-card">
           <div class="showcase-copy">
             <p class="eyebrow">Featured pick</p>
@@ -39,9 +73,10 @@
             <div class="showcase-art" id="showcaseArt"></div>
             <div class="showcase-controls">
               <div class="showcase-dots" id="showcaseDots" aria-label="Showcase navigation"></div>
-              <div class="showcase-nav-buttons">
+              <div class="showcase-actions">
                 <button class="nav-btn" id="prevBtn" aria-label="Previous bouquet">←</button>
                 <button class="nav-btn" id="nextBtn" aria-label="Next bouquet">→</button>
+                <button class="btn btn-ghost" id="showcaseAddBtn">Add to cart</button>
               </div>
             </div>
           </div>
@@ -70,59 +105,11 @@
         <div class="catalog-grid" id="productGrid"></div>
       </section>
 
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Fresh-picked, design-led florals</p>
-          <h1>Modern bouquets for luminous spaces.</h1>
-          <p>
-            Discover a refined edit of blooms that feels calm, contemporary, and effortlessly elegant.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#collections">Explore collection</a>
-            <a class="btn btn-secondary" href="#ourstory">Meet the edit</a>
-          </div>
-          <div class="metrics">
-            <div>
-              <strong>48h</strong>
-              <span>same-day prep</span>
-            </div>
-            <div>
-              <strong>12+</strong>
-              <span>signature styles</span>
-            </div>
-            <div>
-              <strong>4.9/5</strong>
-              <span>happy clients</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="visual-card">
-            <div class="visual-orb"></div>
-            <div class="flower-stack">
-              <span>🌹</span>
-              <span>🌸</span>
-              <span>🌼</span>
-            </div>
-            <div class="visual-caption">
-              <p>Signature spring edit</p>
-              <h3>Garden Glow</h3>
-            </div>
-          </div>
-          <div class="mini-card">
-            <p>Best seller</p>
-            <strong>Serene Meadow</strong>
-            <span>Soft eucalyptus & cream roses</span>
-          </div>
-        </div>
-      </section>
-
       <section class="contact-section" id="contact">
         <div class="contact-card">
           <div class="contact-copy">
             <p class="eyebrow">Contact</p>
-            <h2>Let’s create something beautiful together.</h2>
+            <h2>Let's create something beautiful together.</h2>
             <p>
               Visit our studio, send us a note, or arrange a bouquet for your next celebration.
             </p>
@@ -143,7 +130,7 @@
             </label>
             <label>
               Message
-              <textarea rows="4" placeholder="Tell us what you’re looking for."></textarea>
+              <textarea rows="4" placeholder="Tell us what you're looking for."></textarea>
             </label>
             <button class="btn btn-primary" type="submit">Send inquiry</button>
           </form>
@@ -169,6 +156,10 @@
       </footer>
     </div>
 
-    <script src="assets/script.js"></script>
+    <script src="assets/js/icons.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/cart-manager.js"></script>
+    <script src="assets/js/controllers.js"></script>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
