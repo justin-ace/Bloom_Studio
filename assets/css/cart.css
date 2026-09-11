@@ -1,0 +1,148 @@
+.checkout-shell {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  margin-top: 4px;
+}
+
+.cart-panel,
+.checkout-panel {
+  background: var(--sage-soft);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 26px;
+}
+
+.section-heading.compact {
+  margin-bottom: 18px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-item:last-of-type {
+  border-bottom: 0;
+}
+
+.cart-item-visual {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.cart-item-info h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.cart-item-info p {
+  margin: 0 0 8px;
+  font-size: 0.88rem;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 6px;
+  width: fit-content;
+  background: var(--linen);
+}
+
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--forest);
+  font-weight: 800;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.qty-btn:hover {
+  background: var(--gold-soft);
+}
+
+.qty-value {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.cart-item-side {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+  text-align: right;
+}
+
+.cart-item-price {
+  font-weight: 800;
+  color: var(--forest);
+  white-space: nowrap;
+}
+
+.remove-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+
+.cart-empty {
+  padding: 40px 12px;
+  text-align: center;
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+}
+
+.cart-empty[hidden] {
+  display: none;
+}
+
+.cart-empty svg {
+  width: 64px;
+  color: var(--moss);
+  margin-bottom: 6px;
+}
+
+.summary-box {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 20px;
+  background: var(--linen);
+  border: 1px solid var(--border);
+}
+
+.summary-box div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.summary-box .total-row {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--forest);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
